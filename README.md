@@ -1,122 +1,382 @@
-STUDYNOTION
-StudyNotion is a comprehensive educational platform aimed at providing a seamless experience for students and educators alike. It offers a range of features that facilitate learning, collaboration, and resource sharing.
+# 🎓 StudyNotion
 
-StudyNotion Logo
+<div align="center">
 
-DESCRIPTION
-The StudyNotion project is designed to streamline the educational process. It allows users to access a variety of educational materials, collaborate on projects, and interact with educators, enhancing the learning experience. StudyNotion employs a monolithic architecture and leverages a tech stack involving React.js, Node.js, Express.js, MongoDB, Cloudinary, and Tailwind CSS.
+![StudyNotion Logo](./assets/logo.png)
 
-TECHNOLOGY STACK
-StudyNotion is built using the following technologies:
+**A Modern EdTech Platform for Students and Educators**
 
-FRONTEND
-FIGMA : Figma is a collaborative interface design tool that enables multiple users to work on designing clean and minimal user interfaces simultaneously. Its cloud-based approach makes it accessible for design teams to create, prototype, and collaborate on user interface designs.
+StudyNotion is a full-stack educational platform that provides an interactive and seamless learning experience where students can enroll in courses and instructors can create, manage, and monetize educational content.
 
-REACT.JS : React.js is a widely used JavaScript library for building user interfaces. It allows for the creation of interactive and reusable UI components, enabling efficient rendering and managing of application state, leading to a seamless user experience.
+[Features](#-features) •
+[Tech Stack](#-tech-stack) •
+[Architecture](#-architecture) •
+[API Routes](#-api-routes) •
+[Installation](#-installation--setup) •
+[Contributing](#-contributing)
 
-CSS & TAILWIND : Both CSS (Cascading Style Sheets) and Tailwind CSS are styling frameworks used to create visually appealing and responsive user interfaces. CSS is the fundamental technology for styling web pages, while Tailwind CSS is a utility-first CSS framework that aids in building custom designs by composing utility classes.
+</div>
 
-REDUX : Redux is a predictable state container for JavaScript applications. It helps manage the application's state and centralizes the state logic, making it easier to maintain and manage state changes across different parts of the application.
+---
 
-CHART.JS : Chart.js is an open-source JavaScript charting library that allows developers to create interactive and visually appealing charts on web applications. It's easy to use and provides a variety of chart types, making data visualization more accessible and engaging for users.
+# 📖 Overview
 
-BACKEND
-NODE.JS : Node.js is a server-side runtime environment that allows the execution of JavaScript code outside a web browser. It is based on the V8 JavaScript engine and is designed to build scalable and fast network applications. In StudyNotion, Node.js serves as the foundational technology for the backend, facilitating the server operations, handling HTTP requests, and managing the overall application workflow.
+StudyNotion is designed to simplify and improve online learning through an intuitive and scalable system.
 
-EXPRESS.JS : Express.js is a minimal and flexible Node.js web application framework. It provides a robust set of features to build web applications and APIs. In the context of StudyNotion, Express.js simplifies routing, middleware implementation, and handling HTTP requests, allowing for efficient creation and management of backend APIs.
+The platform enables:
 
-MONGODB : MongoDB is a popular NoSQL database that uses a flexible and JSON-like document structure. It's well-known for its scalability, flexibility, and high performance. StudyNotion leverages MongoDB to store and manage data efficiently, allowing for easy adaptation to changing data requirements and enabling seamless integration with the application.
+- 📚 Course creation and management
+- 👨‍🏫 Instructor dashboards
+- 👨‍🎓 Student enrollment
+- 💳 Payment integration
+- ⭐ Ratings and reviews
+- ☁️ Media management
+- 🔐 Authentication and authorization
+- 📊 Learning analytics
 
-CLOUDINARY : Cloudinary is a cloud-based media management solution that specializes in the storage, optimization, and delivery of images and videos. In StudyNotion, Cloudinary plays a crucial role in managing all media-related content, including images, videos, and documents. It provides functionalities for uploading, storage, and manipulation of media files, ensuring a reliable and scalable media management system.
+The application follows a **Monolithic Architecture** and uses modern web technologies to deliver a responsive and smooth user experience.
 
-ARCHITECTURE DIAGRAM
-Architecture Diagram
+---
 
-API ROUTE
-AUTHENTICATION
-ENDPOINT	API PATH
-SENDOTP	api/v1/auth/sendotp
-SIGNUP	api/v1/auth/signup
-LOGIN	api/v1/auth/login
-RESETPASSTOKEN	api/v1/auth/reset-password-token
-RESETPASSWORD	api/v1/auth/reset-password
-PROFILE
-ENDPOINT	API PATH
-GET_USER_DETAILS	api/v1/profile/getUserDetails
-GET_USER_ENROLLED_COURSES	api/v1/profile/getEnrolledCourses
-GET_INSTRUCTOR_DATA	api/v1/profile/instructorDashboard
-STUDENT
-ENDPOINT	API PATH
-COURSE_PAYMENT	api/v1/payment/capturePayment
-COURSE_VERIFY	api/v1/payment/verifyPayment
-SEND_PAYMENT_SUCCESS_EMAIL	api/v1/payment/sendPaymentSuccessEmail
-COURSE
-ENDPOINT	API PATH
-GET_ALL_COURSE	api/v1/course/getAllCourses
-COURSE_DETAILS	api/v1/course/getCourseDetails
-EDIT_COURSE	api/v1/course/editCourse
-COURSE_CATEGORIES	api/v1/course/showAllCategories
-CREATE_COURSE	api/v1/course/createCourse
-CREATE_SECTION	api/v1/course/addSection
-CREATE_SUBSECTION	api/v1/course/addSubSection
-UPDATE_SECTION	api/v1/course/updateSection
-UPDATE_SUBSECTION	api/v1/course/updateSubSection
-GET_ALL_INSTRUCTOR_COURSES	api/v1/course/getInstructorCourses
-DELETE_SECTION	api/v1/course/deleteSection
-DELETE_SUBSECTION	api/v1/course/deleteSubSection
-DELETE_COURSE	api/v1/course/deleteCourse
-GET_FULL_COURSE_DETAILS_AUTHENTICATED	api/v1/course/getFullCourseDetails
-LECTURE_COMPLETION	api/v1/course/updateCourseProgress
-CREATE_RATING	api/v1/course/createRating
-RATINGS & REVIEWS
-ENDPOINT	API PATH
-REVIEWS_DETAILS	api/v1/course/getReviews
-CATEGORIES
-ENDPOINT	API PATH
-CATEGORIES	api/v1/course/showAllCategories
-CATALOG
-ENDPOINT	API PATH
-CATALOG_PAGE_DATA	api/v1/course/getCategoryPageDetails
-CONTACT US
-ENDPOINT	API PATH
-CONTACT_US	api/v1/reach/contact
-SETTING
-ENDPOINT	API PATH
-UPDATE_DISPLAY_PICTURE	api/v1/profile/updateDisplayPicture
-UPDATE_PROFILE	api/v1/profile/updateProfile
-CHANGE_PASSWORD	api/v1/auth/changepassword
-DELETE_PROFILE	api/v1/profile/deleteProfile
-SCHEMA DESIGN
-Schema Design
+# ✨ Features
 
-FUNCTIONALITIES
-The back end of StudyNotion provides a range of features and functionalities, including:
+## Student Features
 
-USER AUTHENTICATION & AUTHORIZATION: Students and instructors can sign up and log in using email addresses and passwords. The platform supports OTP (One-Time Password) verification and forgot password functionality for enhanced security.
-COURSE MANAGEMENT: Instructors can create, read, update, and delete courses, manage course content, and media. Students can view and rate courses.
-PAYMENT INTEGRATION: Students can purchase and enroll in courses by completing the checkout flow that includes Razorpay integration for payment handling.
-CLOUD-BASED MEDIA MANAGEMENT: StudyNotion utilizes Cloudinary, a cloud-based media management service, to store and manage all media content, including images, videos, and documents.
-MARKDOWN FORMATTING: Course content is stored in Markdown format, allowing easier display and rendering on the front end.
-FRONTEND
-The front end of StudyNotion is designed using Figma, a popular design tool that allows for the creation of clean and minimal user interfaces. It comprises various pages for Students, Instructors, and potential Admin functionalities:
+- User Registration/Login
+- OTP Verification
+- Forgot Password functionality
+- Browse all courses
+- Wishlist management
+- Add courses to cart
+- Purchase courses
+- Course progress tracking
+- Course reviews and ratings
+- Update profile settings
 
-STUDENT
-HOMEPAGE: Brief introduction to the platform with links to the course list and user details.
-COURSE LIST: Displays all available courses with descriptions and ratings.
-WISHLIST: Shows courses added to the student's wishlist.
-CART CHECKOUT: Allows users to complete the course purchase.
-COOURSE CONTENT: Displays course material, including videos and related content.
-USER DETAILS: Contains information about the student's account.
-USER EDIT DETAILS: Enables students to edit their account details.
-INSTRUCTOR
-DASHBOARD: Overview of the instructor's courses, including ratings and feedback.
-INSIGHTS: Detailed metrics of the instructor's courses.
-COURSE MANAGEMENT PAGES: Creation, update, and deletion of courses, as well as managing content and pricing.
-VIEW & EDIT PROFILE DETAILS: View and edit account details.
-ADMIN (Future Scope)
-DASHBOARD: Overview of the platform's courses, instructors, and students.
-INSIGHTS: Detailed metrics of the platform, including user count, courses, and revenue.
-INSTRUCTOR MANAGEMENT: Admin access to manage instructors, their account details, courses, and ratings.
-MISCELLANEOUS Access to user and course management pages.
+---
 
+## Instructor Features
 
+- Create courses
+- Update courses
+- Delete courses
+- Add sections and subsections
+- Upload videos and media
+- View dashboard analytics
+- View enrolled students
+- Monitor course performance
+
+---
+
+## Future Admin Features
+
+- Manage users
+- Manage instructors
+- Platform analytics
+- Revenue insights
+- Content moderation
+- System management
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend Technologies
+
+| Technology | Purpose |
+|------------|----------|
+| React.js | Frontend UI Development |
+| Redux | State Management |
+| Tailwind CSS | Styling |
+| CSS | Additional Styling |
+| Chart.js | Data Visualization |
+| Figma | UI/UX Design |
+
+---
+
+## Backend Technologies
+
+| Technology | Purpose |
+|------------|----------|
+| Node.js | Runtime Environment |
+| Express.js | Backend Framework |
+| MongoDB | Database |
+| Cloudinary | Media Storage |
+| JWT | Authentication |
+| Razorpay | Payment Processing |
+
+---
+
+# 🏗 Architecture
+
+StudyNotion uses a **Monolithic Architecture** where all services are managed within a unified application structure.
+
+### Architecture Flow
+
+```text
+User
+   ↓
+Frontend (React)
+   ↓
+Backend API (Node + Express)
+   ↓
+Authentication Middleware
+   ↓
+Database (MongoDB)
+   ↓
+Cloudinary Storage
+```
+
+---
+
+# 📂 Project Structure
+
+```bash
+StudyNotion/
+│
+├── client/
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   └── redux/
+│
+├── server/
+│   ├── controllers/
+│   ├── routes/
+│   ├── models/
+│   ├── middleware/
+│   ├── config/
+│   └── utils/
+│
+├── assets/
+├── README.md
+└── package.json
+```
+
+---
+
+# 🔐 Authentication Features
+
+StudyNotion implements secure authentication with:
+
+- JWT Authentication
+- OTP Verification
+- Password Reset
+- Protected Routes
+- Role-Based Access Control
+
+Roles include:
+
+- Student
+- Instructor
+- Admin (Future Scope)
+
+---
+
+# 📡 API Routes
+
+## Authentication APIs
+
+| Endpoint | Route |
+|-----------|--------|
+| Send OTP | `/api/v1/auth/sendotp` |
+| Signup | `/api/v1/auth/signup` |
+| Login | `/api/v1/auth/login` |
+| Reset Password Token | `/api/v1/auth/reset-password-token` |
+| Reset Password | `/api/v1/auth/reset-password` |
+
+---
+
+## Profile APIs
+
+| Endpoint | Route |
+|-----------|--------|
+| Get User Details | `/api/v1/profile/getUserDetails` |
+| Get Enrolled Courses | `/api/v1/profile/getEnrolledCourses` |
+| Instructor Dashboard | `/api/v1/profile/instructorDashboard` |
+
+---
+
+## Course APIs
+
+| Endpoint | Route |
+|-----------|--------|
+| Get All Courses | `/api/v1/course/getAllCourses` |
+| Create Course | `/api/v1/course/createCourse` |
+| Edit Course | `/api/v1/course/editCourse` |
+| Delete Course | `/api/v1/course/deleteCourse` |
+| Add Section | `/api/v1/course/addSection` |
+| Add Subsection | `/api/v1/course/addSubSection` |
+| Update Progress | `/api/v1/course/updateCourseProgress` |
+| Create Rating | `/api/v1/course/createRating` |
+
+---
+
+## Payment APIs
+
+| Endpoint | Route |
+|-----------|--------|
+| Capture Payment | `/api/v1/payment/capturePayment` |
+| Verify Payment | `/api/v1/payment/verifyPayment` |
+| Success Email | `/api/v1/payment/sendPaymentSuccessEmail` |
+
+---
+
+# 💳 Payment Integration
+
+StudyNotion integrates **Razorpay** for secure payment handling.
+
+Features:
+
+- Course checkout
+- Payment verification
+- Purchase history
+- Payment success emails
+
+---
+
+# ☁️ Media Management
+
+Cloudinary is used for:
+
+- Video uploads
+- Course thumbnails
+- Image optimization
+- Document storage
+- Media delivery
+
+---
+
+# 🚀 Installation & Setup
+
+## Clone Repository
+
+```bash
+git clone https://github.com/yourusername/studynotion.git
+```
+
+Move into directory:
+
+```bash
+cd studynotion
+```
+
+Install dependencies:
+
+### Frontend
+
+```bash
+cd client
+npm install
+```
+
+### Backend
+
+```bash
+cd server
+npm install
+```
+
+---
+
+## Environment Variables
+
+Create `.env` files.
+
+### Backend .env
+
+```env
+PORT=5000
+
+MONGODB_URL=
+
+JWT_SECRET=
+
+CLOUDINARY_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+
+RAZORPAY_KEY=
+RAZORPAY_SECRET=
+
+MAIL_HOST=
+MAIL_USER=
+MAIL_PASS=
+```
+
+---
+
+## Start Application
+
+### Start Backend
+
+```bash
+npm run dev
+```
+
+### Start Frontend
+
+```bash
+npm start
+```
+
+---
+
+# 📷 Screenshots
+
+Add screenshots here:
+
+| Homepage | Dashboard |
+|-----------|------------|
+| Screenshot | Screenshot |
+
+---
+
+# 🔮 Future Enhancements
+
+- AI-powered course recommendations
+- Live classes
+- Video conferencing
+- Discussion forums
+- Certificate generation
+- Dark mode
+- Mobile application
+- Admin dashboard
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+Steps:
+
+1. Fork repository
+2. Create feature branch
+
+```bash
+git checkout -b feature/NewFeature
+```
+
+3. Commit changes
+
+```bash
+git commit -m "Added new feature"
+```
+
+4. Push changes
+
+```bash
+git push origin feature/NewFeature
+```
+
+5. Create Pull Request
+
+---
+
+<div align="center">
+
+Made with ❤️ by StudyNotion Team
+
+</div>
